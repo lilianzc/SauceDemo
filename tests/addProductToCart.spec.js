@@ -10,11 +10,17 @@ test('add product to cart', async ({page}) => {
     await loginSauceDemo.goToPage();    
     await loginSauceDemo.login();
 
+    //Get the number of items the badge has before adding a new one
+    const itemsBefore = await inventorySauceDemo.itemsInBadge();
+
     //Add Sauce Labs Backpack to the cart
     await inventorySauceDemo.addToCartSauceLabsBackpack();
 
-    //Validate that the shopping cart icon has '1' displayed next to it
-    await expect(inventorySauceDemo.shoppingCartBadge).toHaveText('1');
+    //Get the number of items the badge has after adding a new one    
+    const itemsAfter = await inventorySauceDemo.itemsInBadge();
+
+    //Validate that the shopping cart is increased in one after adding the item
+    expect(itemsAfter).toBe(itemsBefore + 1);
 
     //Validate that the 'Add to Cart' button after used changes to 'Remove'
     await expect(inventorySauceDemo.sauceLabsBackpackAddButton).toHaveText('Remove');

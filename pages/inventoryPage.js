@@ -10,6 +10,17 @@ class inventoryPage {
         this.hamburguerButton = page.locator('.bm-burger-button');
         this.logoutOption = page.getByText('Logout');
     }
+        async itemsInBadge() {
+            const addedItems = await this.shoppingCartBadge.count();
+
+            if (addedItems === 0) {
+            return 0;
+            }    
+            else {
+                return parseInt(await this.shoppingCartBadge.textContent(), 10); 
+            }
+                
+        }
 
         async addToCartSauceLabsBackpack() {
             await this.sauceLabsBackpackAddButton.click();
