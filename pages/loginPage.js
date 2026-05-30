@@ -3,7 +3,8 @@ export class loginPage {
         this.page = page;
         this.usernameInput = page.getByPlaceholder('Username');
         this.passwordInput = page.getByPlaceholder('Password');
-        this.loginButton = page.locator('.submit-button.btn_action');
+        //this.loginButton = page.locator('.submit-button btn_action');
+        this.loginButton = page.getByRole('button');
     }
 
     async goToPage() {
