@@ -1,10 +1,10 @@
 import {test, expect} from '@playwright/test';
 import loginPage from '../pages/LoginPage';
 import inventoryPage from '../pages/InventoryPage';
-import cartPage from '../pages/cartPage';
-import checkoutStepOnePage from '../pages/checkoutStepOnePage';
-import checkoutStepTwo from '../pages/checkoutStepTwoPage';
-import checkoutComplete from '../pages/checkoutCompletePage';
+import cartPage from '../pages/CartPage';
+import checkoutStepOnePage from '../pages/CheckoutStepOnePage';
+import checkoutStepTwo from '../pages/CheckoutStepTwoPage';
+import checkoutComplete from '../pages/CheckoutCompletePage';
 
 test ('end to end customer flow', async ({page}) => {
     const loginSauceDemo = new loginPage(page);
