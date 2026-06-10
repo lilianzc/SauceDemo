@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Schema for Booking Response",
+  "description": "Schema for the response of a Booking",
+  "type": "object",
+  "required": ["bookingid", "booking"],
+  "properties": {
+    "bookingid": {
+      "type": "integer",
+      "description": "The unique identifier for the booking"
+    },
+    "booking": {
+    "type": "object",
+      "required": [
+        "firstname",
+        "lastname",
+        "totalprice",
+        "depositpaid",
+        "bookingdates",
+        "additionalneeds"
+      ],
+
+      "properties": {
+        "firstname": {
+          "type": "string",
+          "description": "The first name of the person who made the booking"
+        },
+        "lastname": {
+          "type": "string",
+          "description": "The last name of the person who made the booking"
+        },
+        "totalprice": {
+          "type": "integer"
+        },
+        "depositpaid": {
+          "type": "boolean",
+          "description": "Whether a deposit was paid for the booking"
+        },
+        "bookingdates": {
+          "type": "object",
+          "required": ["checkin", "checkout"],
+          "properties": {
+            "checkin": {
+              "type": "string",
+              "format": "date"
+            },
+            "checkout": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        },
+        "additionalneeds": {
+          "type": ["string", "null"],
+          "description": "Any additional needs or requests for the booking"
+        }
+      }
+    }
+  }
+
+}
