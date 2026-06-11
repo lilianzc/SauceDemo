@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
-import loginPage from '../pages/LoginPage';
-import inventoryPage from '../pages/InventoryPage';
+import loginPage from '../../pages/LoginPage';
+import inventoryPage from '../../pages/InventoryPage';
 
 test('validate content of the sorting dropdown', async({page}) => {
     const loginSauceDemo = new loginPage(page);
