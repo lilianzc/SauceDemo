@@ -1,0 +1,11 @@
+{
+    "firstname" : "Updated",
+    "lastname" : "Updated",
+    "totalprice" : 50,
+    "depositpaid" : false,
+    "bookingdates" : {
+        "checkin" : "",
+        "checkout" : ""
+    },
+    "additionalneeds" : "Updated"
+}
